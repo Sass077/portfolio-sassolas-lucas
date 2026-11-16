@@ -1,6 +1,4 @@
-/* =================================================_*/
-/* 1. VARIABLES ET CONFIGURATION DE BASE             */
-/* ================================================= */
+/* 1. VARIABLES ET CONFIGURATION DE BASE  */
 :root {
   --couleur-fond: #f5f1e8;       /* Beige clair de fond */
   --couleur-texte: #1d2921;      /* Texte principal foncé */
@@ -55,9 +53,7 @@ ul, ol {
   padding: 0 24px;
 }
 
-/* ================================================= */
-/* 2. NAVIGATION ET MENU MOBILE                      */
-/* ================================================= */
+/* 2. NAVIGATION ET MENU MOBILE     */
 .nav {
   background: var(--couleur-primaire);
 }
@@ -100,14 +96,13 @@ ul, ol {
   font-weight: 600;
 }
 
-/* Éléments masqués pour le menu mobile sans JavaScript */
+/* Éléments masqués pour le menu mobile */
 .menu-check, .menu-btn {
   display: none;
 }
 
-/* ================================================= */
-/* 3. MISE EN PAGE ET STRUCTURE GENERALE             */
-/* ================================================= */
+
+/* 3. MISE EN PAGE ET STRUCTURE GENERALE  */
 main {
   padding: 32px 0 64px;
 }
@@ -129,6 +124,50 @@ main {
   flex: 1 1 300px;
 }
 
+/* Listes de définitions, compétences, contact : libellé + contenu côte à côte */
+.fiche > div, .facts > div, .contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.fiche dt, .facts dt, .contact-list .k {
+  flex: 0 0 160px;
+  font-weight: 600;
+}
+
+.fiche dd, .facts dd {
+  flex: 1 1 200px;
+  margin: 0;
+}
+
+.comp {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+}
+
+.comp .code {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+.comp > div:last-child {
+  flex: 1;
+}
+
+/* Cartes de veille mensuelles */
+.veille-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.veille-grid > li {
+  flex: 1 1 250px;
+}
+
 /* Grille à 3 colonnes automatique */
 .three {
   display: grid;
@@ -136,9 +175,9 @@ main {
   gap: 24px;
 }
 
-/* ================================================= */
-/* 4. COMPOSANTS (Cartes, Boutons, Tags)             */
-/* ================================================= */
+
+/* 4. Cartes, Boutons, Tags  */
+
 .profile-card, .vcard, .mission {
   background: #fff;
   border: 1px solid var(--couleur-bordure);
@@ -165,6 +204,7 @@ main {
 /* Boutons */
 .btns {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 16px;
 }
@@ -221,9 +261,9 @@ main {
   border-bottom: 1px solid var(--couleur-bordure);
 }
 
-/* ================================================= */
-/* 5. PIED DE PAGE                                   */
-/* ================================================= */
+
+/* 5. PIED DE PAGE   */
+
 footer {
   background: var(--couleur-primaire);
   color: var(--couleur-bordure);
@@ -253,9 +293,8 @@ footer .legal-line {
   font-size: 0.85rem;
 }
 
-/* ================================================= */
-/* 6. RESPONSIVE (Mobiles et tablettes)              */
-/* ================================================= */
+/* 6. RESPONSIVE */
+
 @media (max-width: 768px) {
   .menu-btn {
     display: inline-block;
@@ -266,13 +305,22 @@ footer .legal-line {
     cursor: pointer;
   }
 
+  .nav-in {
+    flex-wrap: wrap;
+  }
+
   .links {
     display: none;
     width: 100%;
     flex-direction: column;
     gap: 4px;
     padding-top: 12px;
-}
+  }
+
+  /* Case cochée (clic sur "Menu") : on affiche les liens */
+  .menu-check:checked ~ .links {
+    display: flex;
+  }
 
 /* Style des liens en boutons (Flexbox) */
 .flex-liens {
