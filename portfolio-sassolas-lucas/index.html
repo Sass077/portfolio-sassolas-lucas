@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Page d'accueil</title>
+    <meta name="description" content="Portfolio de Lucas Sassolas, étudiant en BTS SIO option SLAM : projets, stages, compétences E5 et veille technologique.">
+    <meta name="author" content="Lucas Sassolas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio/style.css">
+  </head>
+  <body>
+
+    <!-- Navigation principale -->
+    <header class="nav">
+      <div class="nav-in">
+        <a class="brand" href="index.html">Lucas Sassolas</a>
+        <input class="menu-check" type="checkbox" id="menu-toggle">
+        <label class="menu-btn" for="menu-toggle">Menu <span aria-hidden="true">⌄</span></label>
+        <nav class="links" aria-label="Navigation principale">
+            <a href="index.html" aria-current="page">Accueil</a>
+            <a href="portfolio/apropos.html">À propos</a>
+            <a href="portfolio/competences.html">Compétences</a>
+            <a href="portfolio/projets.html">Projets</a>
+            <a href="portfolio/stage.html">Stage</a>
+            <a href="portfolio/veille.html">Veille</a>
+            <a href="portfolio/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <div class="wrap">
+        <section class="hero" aria-labelledby="titre">
+          <div>
+            <p class="eyebrow">Portfolio</p>
+            <h1 id="titre">Lucas Sassolas</h1>
+            <p class="hero-title">Étudiant</p>
+            <p class="lede">Je suis actuellement en deuxième année du BTS Services informatiques aux organisations, option SLAM, à Annonay.</p>
+            <p>J’ai choisi la spécialité SLAM (Solutions Logicielles et Applications Métiers) et je m’intéresse particulièrement à la sécurité des données, un domaine qui m’a plu lors de mon stage de six semaines chez STS Composites à Saint-Désirat.</p>
+            <div class="btns">
+              <a class="btn p" href="portfolio/projets.html">Voir mes projets</a>
+              <a class="btn t"href="cv/CV_Lucas_Sassolas.pdf" download="CV_Lucas_Sassolas.pdf" class="btn-telecharger">Mon CV</a>
+            </div>
+          </div>
+          <div class="profile-card">
+            <!-- À compléter : logo de l'établissement, ex. <img src="portfolio/logo.png" alt="Logo du Pôle Sup Saint-Denis" width="120"> -->
+            <p class="profile-card-title">Profil</p>
+            <dl class="fiche" aria-label="Repères professionnels">
+              <div><dt>Formation</dt><dd>BTS SIO, option SLAM</dd></div>
+              <div><dt>Établissement</dt><dd>Pôle Sup Saint-Denis, Campus Annonay</dd></div>
+              <div><dt>Année</dt><dd>2e année, 2026/2027</dd></div>
+              <div><dt>E-mail</dt><dd><a href="mailto:lucassassolas@gmail.com">lucassassolas@gmail.com</a></dd></div>
+              <div><dt>GitHub</dt><dd><a href="https://github.com/Sass077" target="_blank" rel="noopener noreferrer">github.com/Sass077</a></dd></div>
+              <!-- À compléter : <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/VOTRE-PROFIL">linkedin.com/in/VOTRE-PROFIL</a></dd></div> -->
+            </dl>
+          </div>
+        </section>
+
+        <section class="dispo" aria-label="Disponibilité">
+          <div class="wrap">
+            <p>Je recherche une poursuite d'études dans la data ou dans l'IA ou les deux.</p>
+            <a class="btn p" href="portfolio/contact.html">Me contacter</a>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="t-projets" style="border-top:0">
+          <div class="split">
+            <h2 id="t-projets">Projets</h2>
+            <div><p><strong >Petit extrait des projets professionnels et personnels.</strong></p></div>
+          </div>
+          <ul class="rows flush projects-list">
+            <li class="row">
+              <div>
+                <h3>Application de gestion de commandes</h3>
+                <ul class="meta"><li class="tag c">C4</li><li class="tag">PPE</li><li class="tag">PHP</li><li class="tag">MVC</li><li class="tag">MySQL</li></ul>
+              </div>
+              <div>
+                <p>Gestion des clients, produits et commandes avec PHP, MySQL et une organisation MVC.</p>
+                <a class="more" href="portfolio/projets.html#client-leger">Lire le projet</a>
+              </div>
+            </li>
+            <li class="row">
+              <div>
+                <h3>Application de gestion immobilière</h3>
+                <ul class="meta"><li class="tag c">C5</li><li class="tag">SLAM</li><li class="tag">C#</li><li class="tag">.NET</li><li class="tag">SQL</li></ul>
+              </div>
+              <div>
+                <p>Application de bureau pour enregistrer des biens immobiliers et suivre leurs informations.</p>
+                <a class="more" href="portfolio/projets.html#client-lourd">Lire le projet</a>
+              </div>
+            </li>
+            <li class="row">
+              <div>
+                <h3>Appel d'offres : TLC Informatique</h3>
+                <ul class="meta"><li class="tag c">C2</li><li class="tag c">C3</li><li class="tag c">C4</li><li class="tag">PPE</li><li class="tag">Canva</li><li class="tag">HTML/CSS</li></ul>
+              </div>
+              <div>
+                <p>Réponse à l'appel d'offres OID : présentation orale sur Canva, site non hébergé codé en HTML et CSS, et devis.</p>
+                <a class="more" href="portfolio/projets.html#appel-offre">Lire le projet</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Pied de page commun -->
+    <footer>
+      <div class="wrap">
+        <div class="who">
+          <strong>Lucas Sassolas</strong>
+          <p>Étudiant en BTS SIO option SLAM, Pôle Sup Saint-Denis, Campus Annonay.</p>
+        </div>
+        <div>
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="portfolio/apropos.html">À propos</a></li>
+            <li><a href="portfolio/competences.html">Compétences</a></li>
+            <li><a href="portfolio/projets.html">Projets</a></li>
+            <li><a href="portfolio/stage.html">Stage</a></li>
+            <li><a href="portfolio/veille.html">Veille</a></li>
+            <li><a href="portfolio/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Me trouver</h2>
+          <ul>
+            <li><a href="mailto:lucassassolas@gmail.com">lucassassolas@gmail.com</a></li>
+            <li><a href="https://github.com/Sass077" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="cv/CV_Lucas_Sassolas.pdf">Curriculum vitae</a></li>
+          </ul>
+        </div>
+        <div class="legal-line">
+          Portfolio réalisé par Lucas Sassolas, 2026 · <a href="portfolio/mentions.html">Mentions légales</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

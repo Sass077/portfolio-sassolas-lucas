@@ -1,0 +1,293 @@
+/* =================================================_*/
+/* 1. VARIABLES ET CONFIGURATION DE BASE             */
+/* ================================================= */
+:root {
+  --couleur-fond: #f5f1e8;       /* Beige clair de fond */
+  --couleur-texte: #1d2921;      /* Texte principal foncé */
+  --couleur-primaire: #17392d;   /* Vert foncé (menus, boutons) */
+  --couleur-secondaire: #315744; /* Vert moyen (liens, survol) */
+  --couleur-accent: #d5e675;     /* Vert anis (éléments actifs) */
+  --couleur-carte: #eae7dc;      /* Fond des cartes et blocs */
+  --couleur-bordure: #d8d3c5;    /* Couleur des bordures */
+}
+
+/* Réinitialisation de base pour éviter les surprises d'affichage */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Hanken Grotesk', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--couleur-texte);
+  background: var(--couleur-fond);
+}
+
+a {
+  color: var(--couleur-secondaire);
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.85;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 14px; }
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Conteneur principal centré */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================================================= */
+/* 2. NAVIGATION ET MENU MOBILE                      */
+/* ================================================= */
+.nav {
+  background: var(--couleur-primaire);
+}
+
+.nav-in {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+}
+
+.links a {
+  color: var(--couleur-bordure);
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.links a:hover {
+  background: var(--couleur-secondaire);
+  color: #fff;
+}
+
+/* Page active dans le menu */
+.links a[aria-current="page"] {
+  background: var(--couleur-accent);
+  color: var(--couleur-primaire);
+  font-weight: 600;
+}
+
+/* Éléments masqués pour le menu mobile sans JavaScript */
+.menu-check, .menu-btn {
+  display: none;
+}
+
+/* ================================================= */
+/* 3. MISE EN PAGE ET STRUCTURE GENERALE             */
+/* ================================================= */
+main {
+  padding: 32px 0 64px;
+}
+
+.block {
+  padding: 32px 0;
+  border-top: 1px solid var(--couleur-bordure);
+}
+
+/* Organisation en colonnes flexibles (remplace les répétitions) */
+.split, .hero, .dispo .wrap, .row, .synthese {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+}
+
+.split > *, .row > *, .synthese > *, .hero > * {
+  flex: 1 1 300px;
+}
+
+/* Grille à 3 colonnes automatique */
+.three {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+/* ================================================= */
+/* 4. COMPOSANTS (Cartes, Boutons, Tags)             */
+/* ================================================= */
+.profile-card, .vcard, .mission {
+  background: #fff;
+  border: 1px solid var(--couleur-bordure);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.profile-card {
+  background: var(--couleur-carte);
+}
+
+/* Bannière de disponibilité */
+.dispo {
+  background: var(--couleur-primaire);
+  color: #fff;
+  padding: 20px 0;
+  margin: 24px 0;
+}
+.dispo p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Boutons */
+.btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--couleur-primaire);
+}
+
+.btn.p {
+  background: var(--couleur-accent);
+  color: var(--couleur-primaire);
+  border-color: var(--couleur-accent);
+}
+
+/* Tags et étiquettes */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.tag {
+  background: var(--couleur-carte);
+  border: 1px solid #bdb7a8;
+  border-radius: 20px;
+  padding: 2px 12px;
+  font-size: 0.85rem;
+}
+
+.tag.c {
+  background: var(--couleur-primaire);
+  border-color: var(--couleur-primaire);
+  color: #fff;
+}
+
+/* Tableaux */
+.table-scroll {
+  overflow-x: auto;
+}
+
+.stage-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stage-table th, .stage-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+/* ================================================= */
+/* 5. PIED DE PAGE                                   */
+/* ================================================= */
+footer {
+  background: var(--couleur-primaire);
+  color: var(--couleur-bordure);
+  padding: 40px 0 20px;
+}
+
+footer a {
+  color: var(--couleur-accent);
+}
+
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+footer h2 {
+  font-size: 1rem;
+  color: #fff;
+}
+
+footer .legal-line {
+  width: 100%;
+  border-top: 1px solid var(--couleur-secondaire);
+  padding-top: 16px;
+  font-size: 0.85rem;
+}
+
+/* ================================================= */
+/* 6. RESPONSIVE (Mobiles et tablettes)              */
+/* ================================================= */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 12px;
+}
+
+/* Style des liens en boutons (Flexbox) */
+.flex-liens {
+  display: flex;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.flex-liens a {
+  background: #00224e;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+}
